@@ -1,0 +1,9 @@
+version: 2
+
+sources:
+  - name: ing_poc_demo
+    database: cognizant-pocngdap-01
+    schema: ing_poc_demo
+    tables:
+      - name: customer
+      - name: transaction
