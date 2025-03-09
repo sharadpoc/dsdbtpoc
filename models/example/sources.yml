@@ -7,3 +7,12 @@ sources:
     tables:
       - name: customer
       - name: transaction
+
+
+  - name: DM_MPSCR
+    database: cognizant-pocngdap-01
+    schema: DM_MPSCR
+    tables:
+      - name: EWM_AR_AU_BAL_M
+
+
