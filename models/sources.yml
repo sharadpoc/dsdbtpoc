@@ -1,4 +1,4 @@
----
+
 sources:
 
 - name: "xg_ps_rdb_dm_mpscr_database.xg_rdb_dm_schema_mpscr"
@@ -15,3 +15,4 @@ sources:
   - name: "ewm_ar_fcy_ar_v"
   - name: "ewm_ar_x_cl_rtg_r"
   - name: "__amp__xg_pm_tgttbl"
+
