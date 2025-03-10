@@ -17,3 +17,4 @@ sources:
   - name: "ewm_ar_fcy_ar_drv_v"
   - name: "ewm_ip_x_cl_rtg_r"
   - name: "ewm_cl_jcog_v"
+  - name: "EWM_AR_AU_BAL_M"
