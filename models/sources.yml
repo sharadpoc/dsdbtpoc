@@ -1,0 +1,18 @@
+sources:
+
+- name: "xg_ps_rdb_dm_mpscr_database.xg_rdb_dm_schema_mpscr"
+  description: "Source tables"
+  database: "cognizant-pocngdap-01"
+  schema: "ds_dbt"
+  tables:
+  - name: "ewm_mdm_stage_crdt_risk_rating"
+  - name: "mdm_credit_risk_rating"
+  - name: "ewm_ip_org_v"
+  - name: "ewm_ar_fcy_ar_v"
+  - name: "ewm_ip_x_cl_rtg_r"
+  - name: "ewm_ar_fcy_ar_drv_v"
+  - name: "ewm_ip_idv_v"
+  - name: "ewm_cl_jcog_x_cl_rtg_r"
+  - name: "ewm_cl_jcog_v"
+  - name: "ewm_ar_x_cl_rtg_r"
+  - name: "mdm_credit_risk_rating_upd_del"
