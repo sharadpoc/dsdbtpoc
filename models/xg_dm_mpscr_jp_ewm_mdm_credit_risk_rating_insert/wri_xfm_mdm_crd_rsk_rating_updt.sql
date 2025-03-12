@@ -17,7 +17,6 @@ SELECT
                 ) AS sys_inrt_tms,
             	mov_MDM_CREDIT_RISK_RATING.TGT_SRC_ID AS src_id,
             	mov_MDM_CREDIT_RISK_RATING.TGT_SRC_DL AS src_dl,
-                TIMESTAMP('{{ run_started_at }}') AS xg_pm_src_dl,
             	CASE 			WHEN svACTION="D" THEN "1" 		ELSE "0" 		END AS del_in_src_stm_f,
 
         FROM

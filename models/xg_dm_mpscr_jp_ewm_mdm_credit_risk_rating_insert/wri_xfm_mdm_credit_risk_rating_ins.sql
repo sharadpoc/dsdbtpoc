@@ -20,7 +20,6 @@ SELECT
             	mov_MDM_CREDIT_RISK_RATING.INR_RTG_MDL AS inr_rtg_mdl,
             	mov_MDM_CREDIT_RISK_RATING.CST_RTG_ST AS cst_rtg_st,
             	TIMESTAMP('{{ run_started_at }}') AS sys_inrt_tms,
-				TIMESTAMP('{{ run_started_at }}') AS xg_pm_src_dl,
             	 '0' AS del_in_src_stm_f
         FROM
             {{ ref('mov_mdm_credit_risk_rating_1') }} AS mov_MDM_CREDIT_RISK_RATING
