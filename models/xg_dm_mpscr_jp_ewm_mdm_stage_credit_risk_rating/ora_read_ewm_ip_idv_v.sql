@@ -9,7 +9,7 @@ SELECT
             	IP_ID,
             	CONCAT(CONCAT(MSTR_SRC_STM_CD, '|'), MSTR_SRC_STM_KEY) AS cst_rk
         FROM
-            {{ source('xg_ps_rdb_dm_mpscr_database.xg_rdb_dm_schema_mpscr', 'ewm_ip_idv_v') }}
+            {{ source('DM_MPSCR', 'EWM_IP_IDV_V') }}
         WHERE
             VLD_FROM_TMS <= PARSE_TIMESTAMP(
                     '%Y%m%d%H%M%S',

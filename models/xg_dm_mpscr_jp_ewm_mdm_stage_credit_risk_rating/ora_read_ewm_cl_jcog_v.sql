@@ -9,7 +9,7 @@ SELECT
             	CL_ID,
             	CONCAT(CONCAT(MSTR_SRC_STM_CD, '|'), MSTR_SRC_STM_KEY) AS jco_rk
         FROM
-            {{ source('xg_ps_rdb_dm_mpscr_database.xg_rdb_dm_schema_mpscr', 'ewm_cl_jcog_v') }}
+            {{ source('DM_MPSCR', 'EWM_CL_JCOG_V') }}
         WHERE
             VLD_FROM_TMS <= PARSE_TIMESTAMP(
                     '%Y%m%d%H%M%S',
