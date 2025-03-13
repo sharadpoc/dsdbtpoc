@@ -17,7 +17,7 @@ SELECT
             	null AS rtg_st_tp_cl_cd,
             	AR_X_CL_RLTNP_TP_CL_CD
         FROM
-            {{ source('xg_ps_rdb_dm_mpscr_database.xg_rdb_dm_schema_mpscr', 'ewm_ar_x_cl_rtg_r') }}
+            {{ source('DM_MPSCR', 'EWM_IP_X_CL_RTG_R') }}
         WHERE
             SRC_DL='{{var("xg_pm_src_dl")}}'
             AND VLD_FROM_TMS <= PARSE_TIMESTAMP(

@@ -16,7 +16,7 @@ SELECT
             	SRC_DL,
             	DATE_FROM AS tgt_date_from
         FROM
-            {{ source('xg_ps_rdb_dm_mpscr_database.xg_rdb_dm_schema_mpscr', 'mdm_credit_risk_rating') }}
+            {{ source('DM_MPSCR', 'MDM_CREDIT_RISK_RATING') }}
         WHERE
             SRC_DL='{{var("xg_pm_src_dl")}}'
             AND DATE_FROM <= PARSE_TIMESTAMP( 
