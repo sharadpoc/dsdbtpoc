@@ -10,7 +10,7 @@ SELECT
             	CL_CD,
             	SRC_DL
         FROM
-            {{ source('xg_ps_rdb_dm_mpscr_database_xg_rdb_dm_schema_mpscr', 'ewm_ip_x_cl_lc_st_r') }}
+            {{ source('DM_MPSCR', 'EWM_IP_X_CL_LC_ST_R') }}
         WHERE
             VLD_FROM_TMS <= PARSE_TIMESTAMP(
                     '%Y%m%d%H%M%S',

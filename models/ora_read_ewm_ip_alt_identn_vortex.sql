@@ -9,7 +9,7 @@ SELECT
             	IP_ID,
             	IP_ID_NM AS cst_vortex_id
         FROM
-            {{ source('xg_ps_rdb_dm_mpscr_database_xg_rdb_dm_schema_mpscr', 'ewm_ip_alt_identn_m') }}
+            {{ source('DM_MPSCR', 'EWM_IP_ALT_IDENTN_M') }}
         WHERE
             VLD_FROM_TMS <= PARSE_TIMESTAMP(
                     '%Y%m%d%H%M%S',

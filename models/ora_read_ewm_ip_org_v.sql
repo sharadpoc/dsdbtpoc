@@ -13,7 +13,7 @@ SELECT
             	MSTR_SRC_STM_KEY,
             	VLD_TO_TMS
         FROM
-            {{ source('xg_ps_rdb_dm_mpscr_database_xg_rdb_dm_schema_mpscr', 'ewm_ip_org_v') }}
+            {{ source('DM_MPSCR', 'EWM_IP_ORG_V') }}
         WHERE
             VLD_FROM_TMS <= PARSE_TIMESTAMP(
                     '%Y%m%d%H%M%S',

@@ -10,7 +10,7 @@ SELECT
             	SRC_DL,
             	RANK
         FROM
-            {{ source('xg_ps_rdb_dm_mpscr_database_xg_rdb_dm_schema_mpscr', 'ewm_ar_x_ip_r') }}
+            {{ source('DM_MPSCR', 'EWM_AR_X_IP_R') }}
         WHERE
             VLD_FROM_TMS <= PARSE_TIMESTAMP(
                     '%Y%m%d%H%M%S',
