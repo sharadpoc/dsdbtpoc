@@ -20,7 +20,7 @@ SELECT
             	INR_RTG_MDL,
             	CST_RTG_ST
         FROM
-            {{ source('xg_ps_rdb_dm_mpscr_database.xg_rdb_dm_schema_mpscr', 'ewm_mdm_stage_crdt_risk_rating') }}
+            {{ source('DM_MPSCR', 'EWM_MDM_STAGE_CRDT_RISK_RATING') }}
         WHERE
             DATA_DT=PARSE_TIMESTAMP(
 			'%Y%m%d%H%M%S', 
