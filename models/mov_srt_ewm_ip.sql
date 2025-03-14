@@ -5,15 +5,15 @@
 
 WITH mov_srt_ewm_ip AS (
 SELECT
-            		mov_EWM_IP.IP_ID AS ip_id,
-            	mov_EWM_IP.CST_RK AS cst_rk,
-            	mov_EWM_IP.VLD_TO_TMS AS vld_to_tms,
-            	mov_EWM_IP.SRC_DL AS src_dl,
-            	mov_EWM_IP.MSTR_SRC_STM_CD AS mstr_src_stm_cd,
-            	mov_EWM_IP.MSTR_SRC_STM_KEY AS mstr_src_stm_key,
-            	mov_EWM_IP.VLD_FROM_TMS AS vld_from_tms
+            		MOV_EWM_IP.IP_ID AS IP_ID,
+            	MOV_EWM_IP.CST_RK AS CST_RK,
+            	MOV_EWM_IP.VLD_TO_TMS AS VLD_TO_TMS,
+            	MOV_EWM_IP.SRC_DL AS SRC_DL,
+            	MOV_EWM_IP.MSTR_SRC_STM_CD AS MSTR_SRC_STM_CD,
+            	MOV_EWM_IP.MSTR_SRC_STM_KEY AS MSTR_SRC_STM_KEY,
+            	MOV_EWM_IP.VLD_FROM_TMS AS VLD_FROM_TMS
         FROM
-            {{ ref('mov_ewm_ip') }} AS mov_EWM_IP
+            {{ ref('mov_ewm_ip') }} AS MOV_EWM_IP
         ORDER BY
             IP_ID ASC,
             SRC_DL ASC 

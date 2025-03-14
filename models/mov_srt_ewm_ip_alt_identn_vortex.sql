@@ -5,11 +5,11 @@
 
 WITH mov_srt_ewm_ip_alt_identn_vortex AS (
 SELECT
-            		rea_EWM_IP_ALT_IDENTN_VORTEX.IP_ID AS ip_id,
-            	rea_EWM_IP_ALT_IDENTN_VORTEX.CST_VORTEX_ID AS cst_vortex_id,
-            	rea_EWM_IP_ALT_IDENTN_VORTEX.SRC_DL AS src_dl
+            		REA_EWM_IP_ALT_IDENTN_VORTEX.IP_ID AS IP_ID,
+            	REA_EWM_IP_ALT_IDENTN_VORTEX.CST_VORTEX_ID AS CST_VORTEX_ID,
+            	REA_EWM_IP_ALT_IDENTN_VORTEX.SRC_DL AS SRC_DL
         FROM
-            {{ ref('rea_ewm_ip_alt_identn_vortex') }} AS rea_EWM_IP_ALT_IDENTN_VORTEX
+            {{ ref('rea_ewm_ip_alt_identn_vortex') }} AS REA_EWM_IP_ALT_IDENTN_VORTEX
         ORDER BY
             IP_ID ASC,
             SRC_DL ASC 

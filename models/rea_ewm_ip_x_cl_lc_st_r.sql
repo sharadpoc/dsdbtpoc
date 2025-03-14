@@ -10,7 +10,7 @@ SELECT
             	CL_CD,
             	SRC_DL
         FROM
-            {{ ref('ora_read_ewm_ip_x_cl_lc_st_r') }} AS ORA_read_EWM_IP_X_CL_LC_ST_R
+            {{ ref('ora_read_ewm_ip_x_cl_lc_st_r') }} AS ORA_READ_EWM_IP_X_CL_LC_ST_R
         WHERE
             CL_CD='CST' 
 )
