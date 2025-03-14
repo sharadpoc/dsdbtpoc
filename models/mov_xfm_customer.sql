@@ -14,6 +14,7 @@ SELECT
             	MOV_JNO_IP_STRT_DT.VLD_FROM_TMS AS DATE_FROM,
             	MOV_JNO_IP_STRT_DT.MSTR_SRC_STM_CD AS SRC_ID,
             	MOV_JNO_IP_STRT_DT.SRC_DL AS SRC_DL,
+                NULL as DATE_TO,
             	PARSE_TIMESTAMP(
                     "%Y%m%d%H%M%S",
                     CONCAT(

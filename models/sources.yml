@@ -2,7 +2,7 @@ sources:
 
 - name: "DM_MPSCR"
   description: "Source tables"
-  database: "<DATABASE NAME>"
+  database: "cognizant-pocngdap-01"
   schema: "DM_MPSCR"
   tables:
   - name: "EWM_AR_X_AR_R"
