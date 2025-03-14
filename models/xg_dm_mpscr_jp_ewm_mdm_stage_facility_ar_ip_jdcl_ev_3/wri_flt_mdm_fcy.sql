@@ -1,0 +1,29 @@
+
+{{config(
+  materialized='ephemeral'
+)}}
+
+WITH wri_flt_mdm_fcy AS (
+SELECT
+            		MOV_FCY_ALL.SRC_DL AS SRC_DL,
+            	MOV_FCY_ALL.DATA_DT AS DATA_DT,
+            	MOV_FCY_ALL.VLD_FROM_TMS AS VLD_FROM_TMS,
+            	MOV_FCY_ALL.VLD_TO_TMS AS VLD_TO_TMS,
+            	MOV_FCY_ALL.SRC_STM_ID AS SRC_STM_ID,
+            	MOV_FCY_ALL.FCY_ID AS FCY_ID,
+            	MOV_FCY_ALL.FCY_RK AS FCY_RK,
+            	MOV_FCY_ALL.AR_ID AS AR_ID,
+            	MOV_FCY_ALL.FCY_AR_TP AS FCY_AR_TP,
+            	MOV_FCY_ALL.COURT_CTRLD_WRKOUT_FCY AS COURT_CTRLD_WRKOUT_FCY,
+            	MOV_FCY_ALL.OUT_OF_COURT_WRKOUT_FCY AS OUT_OF_COURT_WRKOUT_FCY,
+            	MOV_FCY_ALL.COURT_CTRLD_WRKOUT_FILL_DT AS COURT_CTRLD_WRKOUT_FILL_DT,
+            	MOV_FCY_ALL.COURT_CTRLD_WRKOUT_CLS_DT AS COURT_CTRLD_WRKOUT_CLS_DT,
+            	MOV_FCY_ALL.CR_OBLG_DFLTD AS CR_OBLG_DFLTD,
+            	MOV_FCY_ALL.UNDRL_AR_ID AS UNDRL_AR_ID,
+            	MOV_FCY_ALL.SYS_INRT_TMS AS SYS_INRT_TMS
+        FROM
+            {{ ref('mov_fcy_all') }} AS MOV_FCY_ALL 
+)
+
+SELECT * FROM wri_flt_mdm_fcy
+
