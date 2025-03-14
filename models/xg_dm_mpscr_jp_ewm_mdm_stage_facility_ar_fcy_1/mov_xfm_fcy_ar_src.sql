@@ -14,7 +14,7 @@ SELECT
             	MOV_SRT_FNL_FCY.VLD_FROM_TMS AS VLD_FROM_TMS,
             	MOV_SRT_FNL_FCY.VLD_TO_TMS AS VLD_TO_TMS
         FROM
-            {{ ref('mov_srt_fnl_fcy') }} AS MOV_SRT_FNL_FCY 
+            {{ ref('mov_srt_fnl_fcy_m2') }} AS MOV_SRT_FNL_FCY 
 )
 
 SELECT * FROM mov_xfm_fcy_ar_src

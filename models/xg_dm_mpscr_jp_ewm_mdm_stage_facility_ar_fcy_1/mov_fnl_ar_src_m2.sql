@@ -14,7 +14,7 @@ SELECT
             	VLD_FROM_TMS AS VLD_FROM_TMS,
             	VLD_TO_TMS AS VLD_TO_TMS
         FROM
-            {{ ref('fnl_ar_src') }} AS FNL_AR_SRC 
+            {{ ref('fnl_ar_src_m2') }} AS FNL_AR_SRC 
 )
 
 SELECT * FROM mov_fnl_ar_src_m2
