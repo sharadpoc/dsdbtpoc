@@ -41,5 +41,4 @@ vars:
   xg_pm_src_dl: 'xg_pm_src_dl'
   xg_pm_selection_date: '20210103'
   xg_pm_business_tms: '235959'
-  xg_pm_tgttbl: 'mdm_credit_risk_rating'
-  xg_pm_tgttbl_update: 'mdm_credit_risk_rating_upd_del'
+  xg_pm_tgttbl: 'mdm_facility'

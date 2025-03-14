@@ -1,0 +1,39 @@
+
+{{config(
+  materialized='ephemeral'
+)}}
+
+WITH fnl_ar_src_m2 AS (
+SELECT
+            		REA_EWM_AR_FCY_AR_V.FCY_RK AS REA_EWM_AR_FCY_AR_V_FCY_RK,
+            	REA_EWM_AR_FCY_AR_V.SRC_DL AS REA_EWM_AR_FCY_AR_V_SRC_DL,
+            	REA_EWM_AR_FCY_AR_V.AR_ID AS REA_EWM_AR_FCY_AR_V_AR_ID,
+            	REA_EWM_AR_FCY_AR_V.MSTR_SRC_STM_CD AS REA_EWM_AR_FCY_AR_V_MSTR_SRC_STM_CD,
+            	REA_EWM_AR_FCY_AR_V.MSTR_SRC_STM_KEY AS REA_EWM_AR_FCY_AR_V_MSTR_SRC_STM_KEY,
+            	REA_EWM_AR_FCY_AR_V.VLD_FROM_TMS AS REA_EWM_AR_FCY_AR_V_VLD_FROM_TMS,
+            	REA_EWM_AR_FCY_AR_V.VLD_TO_TMS AS REA_EWM_AR_FCY_AR_V_VLD_TO_TMS,
+            	REA_EWM_AR_FCY_AR_V.DATA_DT AS REA_EWM_AR_FCY_AR_V_DATA_DT,
+            	REA_EWM_AR_FCY_AR_DRV_V.FCY_RK AS REA_EWM_AR_FCY_AR_DRV_V_FCY_RK,
+            	REA_EWM_AR_FCY_AR_DRV_V.SRC_DL AS REA_EWM_AR_FCY_AR_DRV_V_SRC_DL,
+            	REA_EWM_AR_FCY_AR_DRV_V.AR_ID AS REA_EWM_AR_FCY_AR_DRV_V_AR_ID,
+            	REA_EWM_AR_FCY_AR_DRV_V.MSTR_SRC_STM_CD AS REA_EWM_AR_FCY_AR_DRV_V_MSTR_SRC_STM_CD,
+            	REA_EWM_AR_FCY_AR_DRV_V.MSTR_SRC_STM_KEY AS REA_EWM_AR_FCY_AR_DRV_V_MSTR_SRC_STM_KEY,
+            	REA_EWM_AR_FCY_AR_DRV_V.VLD_FROM_TMS AS REA_EWM_AR_FCY_AR_DRV_V_VLD_FROM_TMS,
+            	REA_EWM_AR_FCY_AR_DRV_V.VLD_TO_TMS AS REA_EWM_AR_FCY_AR_DRV_V_VLD_TO_TMS,
+            	REA_EWM_AR_FCY_AR_DRV_V.DATA_DT AS REA_EWM_AR_FCY_AR_DRV_V_DATA_DT
+        FROM
+            (
+                    SELECT
+                         *
+                    FROM
+                        {{ ref('rea_ewm_ar_fcy_ar_v') }} AS REA_EWM_AR_FCY_AR_V
+                    UNION DISTINCT
+                    SELECT
+                         *
+                    FROM
+                        {{ ref('rea_ewm_ar_fcy_ar_drv_v') }} AS REA_EWM_AR_FCY_AR_DRV_V
+                ) 
+)
+
+SELECT * FROM fnl_ar_src_m2
+
