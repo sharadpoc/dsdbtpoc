@@ -9,7 +9,7 @@ SELECT
             	IP_ID,
             	VLD_FROM_TMS,
             	MSTR_SRC_STM_CD,
-            	CONCAT(CONCAT(MSTR_SRC_STM_CD, '|'), MSTR_SRC_STM_KEY) AS cst_rk,
+            	CONCAT(CONCAT(MSTR_SRC_STM_CD, '|'), MSTR_SRC_STM_KEY) AS CST_RK,
             	MSTR_SRC_STM_KEY,
             	VLD_TO_TMS
         FROM

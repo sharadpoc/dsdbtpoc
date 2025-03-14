@@ -3,7 +3,7 @@
   materialized='ephemeral'
 )}}
 
-WITH ora_read_ewm_ar_x_ip_r AS (
+WITH ora_read_ewm_ar_x_ip_r_m2 AS (
 SELECT
             	IP_ID,
             	AR_X_IP_RLTNP_TP_CL_CD,
@@ -23,5 +23,5 @@ SELECT
             AND SRC_DL='{{var("xg_pm_src_dl")}}' 
 )
 
-SELECT * FROM ora_read_ewm_ar_x_ip_r
+SELECT * FROM ora_read_ewm_ar_x_ip_r_m2
 

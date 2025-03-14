@@ -13,7 +13,7 @@ SELECT
             	VLD_FROM_TMS,
             	VLD_TO_TMS
         FROM
-            {{ ref('ora_read_ewm_ip_org_v') }} AS ORA_read_EWM_IP_ORG_V 
+            {{ ref('ora_read_ewm_ip_org_v') }} AS ORA_READ_EWM_IP_ORG_V 
 )
 
 SELECT * FROM rea_ewm_ip_org_v
