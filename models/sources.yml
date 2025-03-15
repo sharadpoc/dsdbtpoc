@@ -15,4 +15,4 @@ sources:
   - name: "EWM_MDM_STAGE_FCY_AR"
   - name: "EWM_AR_IDENTN_M"
   - name: "EWM_MDM_STAGE_FCY_AR_IP_JDCL"
-  - name: "mdm_credit_risk_rating"
+  - name: "MDM_CREDIT_RISK_RATING"
