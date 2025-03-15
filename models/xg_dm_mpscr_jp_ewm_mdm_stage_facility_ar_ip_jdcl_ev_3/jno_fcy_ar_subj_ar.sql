@@ -20,8 +20,8 @@ SELECT
             	MOV_SRT_AR_RLTNP.AR_X_AR_RLTNP_TP_CL_CD AS MOV_SRT_AR_RLTNP_AR_X_AR_RLTNP_TP_CL_CD
         FROM
             {{ ref('mov_srt_fcy_ar') }} AS MOV_SRT_FCY_AR
-            LEFT OUTER JOIN {{ ref('mov_srt_ar_rltnp') }} AS MOV_SRT_AR_RLTNP ON MOV_SRT_FCY_AR.SRC_DL=MOV_SRT_AR_RLTNP.SRC_DL
-            AND MOV_SRT_FCY_AR.AR_ID=MOV_SRT_AR_RLTNP.AR_ID 
+            LEFT OUTER JOIN {{ ref('mov_srt_ar_rltnp') }} AS MOV_SRT_AR_RLTNP ON MOV_SRT_AR_RLTNP.SRC_DL=MOV_SRT_FCY_AR.SRC_DL
+            AND MOV_SRT_AR_RLTNP.AR_ID=MOV_SRT_FCY_AR.AR_ID 
 )
 
 SELECT * FROM jno_fcy_ar_subj_ar

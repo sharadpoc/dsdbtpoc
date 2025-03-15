@@ -26,8 +26,8 @@ SELECT
             	MOV_SRT_SPSDG_AR.SUBJ_AR_ID AS MOV_SRT_SPSDG_AR_SUBJ_AR_ID
         FROM
             {{ ref('mov_srt_fcy_ip_jcl_ev') }} AS MOV_SRT_FCY_IP_JCL_EV
-            LEFT OUTER JOIN {{ ref('mov_srt_spsdg_ar') }} AS MOV_SRT_SPSDG_AR ON MOV_SRT_FCY_IP_JCL_EV.SRC_DL=MOV_SRT_SPSDG_AR.SRC_DL
-            AND MOV_SRT_FCY_IP_JCL_EV.AR_ID=MOV_SRT_SPSDG_AR.AR_ID 
+            LEFT OUTER JOIN {{ ref('mov_srt_spsdg_ar') }} AS MOV_SRT_SPSDG_AR ON MOV_SRT_SPSDG_AR.SRC_DL=MOV_SRT_FCY_IP_JCL_EV.SRC_DL
+            AND MOV_SRT_SPSDG_AR.AR_ID=MOV_SRT_FCY_IP_JCL_EV.AR_ID 
 )
 
 SELECT * FROM jno_fcy_spsdg_ar

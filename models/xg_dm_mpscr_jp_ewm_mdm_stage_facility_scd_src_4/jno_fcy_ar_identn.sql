@@ -31,8 +31,8 @@ SELECT
             	MOV_SRT_MPS_AR_IDENTN.SRC_DL AS MOV_SRT_MPS_AR_IDENTN_SRC_DL
         FROM
             {{ ref('mov_cy_ar_lwst_hghst') }} AS MOV_CY_AR_LWST_HGHST
-            LEFT OUTER JOIN {{ ref('mov_srt_mps_ar_identn') }} AS MOV_SRT_MPS_AR_IDENTN ON MOV_CY_AR_LWST_HGHST.SRC_DL=MOV_SRT_MPS_AR_IDENTN.SRC_DL
-            AND MOV_CY_AR_LWST_HGHST.AR_ID=MOV_SRT_MPS_AR_IDENTN.AR_ID 
+            LEFT OUTER JOIN {{ ref('mov_srt_mps_ar_identn') }} AS MOV_SRT_MPS_AR_IDENTN ON MOV_SRT_MPS_AR_IDENTN.SRC_DL=MOV_CY_AR_LWST_HGHST.SRC_DL
+            AND MOV_SRT_MPS_AR_IDENTN.AR_ID=MOV_CY_AR_LWST_HGHST.AR_ID 
 )
 
 SELECT * FROM jno_fcy_ar_identn

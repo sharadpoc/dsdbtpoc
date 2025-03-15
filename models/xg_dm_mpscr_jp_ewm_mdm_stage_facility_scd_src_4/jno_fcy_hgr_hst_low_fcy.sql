@@ -29,8 +29,8 @@ SELECT
             	MOV_SRT_FCY_SPSDG_DRV.UNDRL_AR_ID AS MOV_SRT_FCY_SPSDG_DRV_UNDRL_AR_ID
         FROM
             {{ ref('mov_srt_ar_x_ar_r_hgr') }} AS MOV_SRT_AR_X_AR_R_HGR
-            LEFT OUTER JOIN {{ ref('mov_srt_fcy_spsdg_drv') }} AS MOV_SRT_FCY_SPSDG_DRV ON MOV_SRT_AR_X_AR_R_HGR.SRC_DL=MOV_SRT_FCY_SPSDG_DRV.SRC_DL
-            AND MOV_SRT_AR_X_AR_R_HGR.AR_ID=MOV_SRT_FCY_SPSDG_DRV.AR_ID 
+            LEFT OUTER JOIN {{ ref('mov_srt_fcy_spsdg_drv') }} AS MOV_SRT_FCY_SPSDG_DRV ON MOV_SRT_FCY_SPSDG_DRV.SRC_DL=MOV_SRT_AR_X_AR_R_HGR.SRC_DL
+            AND MOV_SRT_FCY_SPSDG_DRV.AR_ID=MOV_SRT_AR_X_AR_R_HGR.AR_ID 
 )
 
 SELECT * FROM jno_fcy_hgr_hst_low_fcy

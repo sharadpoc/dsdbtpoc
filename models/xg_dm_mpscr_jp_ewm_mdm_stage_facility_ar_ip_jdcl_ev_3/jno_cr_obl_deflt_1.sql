@@ -29,8 +29,8 @@ SELECT
             	MOV_SRT_FCY_IP_RLTNP.ACT_END_DT AS MOV_SRT_FCY_IP_RLTNP_ACT_END_DT
         FROM
             {{ ref('mov_xfm_ip_cl_cd') }} AS MOV_XFM_IP_CL_CD
-            LEFT OUTER JOIN {{ ref('mov_srt_fcy_ip_rltnp') }} AS MOV_SRT_FCY_IP_RLTNP ON MOV_XFM_IP_CL_CD.SRC_DL=MOV_SRT_FCY_IP_RLTNP.SRC_DL
-            AND MOV_XFM_IP_CL_CD.IP_ID=MOV_SRT_FCY_IP_RLTNP.IP_ID 
+            LEFT OUTER JOIN {{ ref('mov_srt_fcy_ip_rltnp') }} AS MOV_SRT_FCY_IP_RLTNP ON MOV_SRT_FCY_IP_RLTNP.SRC_DL=MOV_XFM_IP_CL_CD.SRC_DL
+            AND MOV_SRT_FCY_IP_RLTNP.IP_ID=MOV_XFM_IP_CL_CD.IP_ID 
 )
 
 SELECT * FROM jno_cr_obl_deflt_1

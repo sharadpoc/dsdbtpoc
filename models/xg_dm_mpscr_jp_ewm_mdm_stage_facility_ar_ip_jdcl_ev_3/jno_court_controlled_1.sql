@@ -27,8 +27,8 @@ SELECT
             	MOV_SRT_CRT_CNTRLD_AR_ID.IP_ID AS MOV_SRT_CRT_CNTRLD_AR_ID_IP_ID
         FROM
             {{ ref('mov_srt_fcy_ar_fnc_st') }} AS MOV_SRT_FCY_AR_FNC_ST
-            LEFT OUTER JOIN {{ ref('mov_srt_crt_cntrld_ar_id') }} AS MOV_SRT_CRT_CNTRLD_AR_ID ON MOV_SRT_FCY_AR_FNC_ST.SRC_DL=MOV_SRT_CRT_CNTRLD_AR_ID.SRC_DL
-            AND MOV_SRT_FCY_AR_FNC_ST.AR_ID=MOV_SRT_CRT_CNTRLD_AR_ID.AR_ID 
+            LEFT OUTER JOIN {{ ref('mov_srt_crt_cntrld_ar_id') }} AS MOV_SRT_CRT_CNTRLD_AR_ID ON MOV_SRT_CRT_CNTRLD_AR_ID.SRC_DL=MOV_SRT_FCY_AR_FNC_ST.SRC_DL
+            AND MOV_SRT_CRT_CNTRLD_AR_ID.AR_ID=MOV_SRT_FCY_AR_FNC_ST.AR_ID 
 )
 
 SELECT * FROM jno_court_controlled_1

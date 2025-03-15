@@ -22,8 +22,8 @@ SELECT
             	MOV_XFM_AR_CL_CD.AR_CL_CD AS MOV_XFM_AR_CL_CD_AR_CL_CD
         FROM
             {{ ref('mov_srt_fcy_ar_id') }} AS MOV_SRT_FCY_AR_ID
-            LEFT OUTER JOIN {{ ref('mov_xfm_ar_cl_cd') }} AS MOV_XFM_AR_CL_CD ON MOV_SRT_FCY_AR_ID.SRC_DL=MOV_XFM_AR_CL_CD.SRC_DL
-            AND MOV_SRT_FCY_AR_ID.AR_ID=MOV_XFM_AR_CL_CD.AR_ID 
+            LEFT OUTER JOIN {{ ref('mov_xfm_ar_cl_cd') }} AS MOV_XFM_AR_CL_CD ON MOV_XFM_AR_CL_CD.SRC_DL=MOV_SRT_FCY_AR_ID.SRC_DL
+            AND MOV_XFM_AR_CL_CD.AR_ID=MOV_SRT_FCY_AR_ID.AR_ID 
 )
 
 SELECT * FROM jno_cr_obl_deflt_2
