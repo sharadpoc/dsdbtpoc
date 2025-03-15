@@ -7,7 +7,7 @@
         SELECT
              *
         FROM
-            {{ ref('wri_ewm_mdm_stage_ar_transaction') }} 
+            {{ ref('mov_ewm_mdm_txn_cdc') }} 
  "
 )}}
 

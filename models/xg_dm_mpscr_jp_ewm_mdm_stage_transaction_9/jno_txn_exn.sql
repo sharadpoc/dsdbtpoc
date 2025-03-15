@@ -33,8 +33,8 @@ SELECT
             	MOV_SRT_EWM_EV_TXN_EXN_V.PNP_TXN_CCY_AMT AS MOV_SRT_EWM_EV_TXN_EXN_V_PNP_TXN_CCY_AMT
         FROM
             {{ ref('mov_jno_ewm_ev_x_cl_r') }} AS MOV_JNO_EWM_EV_X_CL_R
-            LEFT OUTER JOIN {{ ref('mov_srt_ewm_ev_txn_exn_v') }} AS MOV_SRT_EWM_EV_TXN_EXN_V ON MOV_JNO_EWM_EV_X_CL_R.EV_ID=MOV_SRT_EWM_EV_TXN_EXN_V.EV_ID
-            AND MOV_JNO_EWM_EV_X_CL_R.SRC_DL=MOV_SRT_EWM_EV_TXN_EXN_V.SRC_DL 
+            LEFT OUTER JOIN {{ ref('mov_srt_ewm_ev_txn_exn_v') }} AS MOV_SRT_EWM_EV_TXN_EXN_V ON MOV_SRT_EWM_EV_TXN_EXN_V.EV_ID=MOV_JNO_EWM_EV_X_CL_R.EV_ID
+            AND MOV_SRT_EWM_EV_TXN_EXN_V.SRC_DL=MOV_JNO_EWM_EV_X_CL_R.SRC_DL 
 )
 
 SELECT * FROM jno_txn_exn
