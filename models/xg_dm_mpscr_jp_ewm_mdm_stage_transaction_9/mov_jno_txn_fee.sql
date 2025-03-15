@@ -1,0 +1,32 @@
+
+{{config(
+  materialized='ephemeral'
+)}}
+
+WITH mov_jno_txn_fee AS (
+SELECT
+            		MOV_SRT_EV_TXN_TXN_RK AS TXN_RK,
+            	MOV_SRT_EV_TXN_FEE_TXN_FEE_CMPT_EV_ID AS TXN_FEE_CMPT_EV_ID,
+            	MOV_SRT_EV_TXN_SRC_DL AS SRC_DL,
+            	MOV_SRT_EV_TXN_EV_ID AS EV_ID,
+            	MOV_SRT_EV_TXN_MSTR_SRC_STM_CD AS MSTR_SRC_STM_CD,
+            	MOV_SRT_EV_TXN_MSTR_SRC_STM_KEY AS MSTR_SRC_STM_KEY,
+            	MOV_SRT_EV_TXN_VLD_FROM_TMS AS VLD_FROM_TMS,
+            	MOV_SRT_EV_TXN_VLD_TO_TMS AS VLD_TO_TMS,
+            	MOV_SRT_EV_TXN_PRIM_AR_ID AS PRIM_AR_ID,
+            	MOV_SRT_EV_TXN_TXN_BOOK_DT AS TXN_BOOK_DT,
+            	MOV_SRT_EV_TXN_TXN_CCY_AMT AS TXN_CCY_AMT,
+            	MOV_SRT_EV_TXN_TXN_CCY_CL_CD AS TXN_CCY_CL_CD,
+            	MOV_SRT_EV_TXN_TXN_RSN_TP_CL_CD AS TXN_RSN_TP_CL_CD,
+            	MOV_SRT_EV_TXN_LDGR_CCY_AMT AS LDGR_CCY_AMT,
+            	MOV_SRT_EV_TXN_LDGR_CCY_CL_CD AS LDGR_CCY_CL_CD,
+            	MOV_SRT_EV_TXN_DATA_DT AS DATA_DT,
+            	MOV_SRT_EV_TXN_FCY_RK AS FCY_RK,
+            	MOV_SRT_EV_TXN_FEE_TXN_FEE_TXN_CCY_AMT AS TXN_FEE_TXN_CCY_AMT,
+            	MOV_SRT_EV_TXN_FEE_TXN_FEE_CCY_CL_CD AS TXN_FEE_CCY_CL_CD
+        FROM
+            {{ ref('jno_txn_fee') }} AS JNO_TXN_FEE 
+)
+
+SELECT * FROM mov_jno_txn_fee
+

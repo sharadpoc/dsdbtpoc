@@ -1,0 +1,33 @@
+
+{{config(
+  materialized='ephemeral'
+)}}
+
+WITH mov_jno_ewm_ev_x_cl_r AS (
+SELECT
+            		MOV_JNO_TXN_FEE_TXN_RK AS TXN_RK,
+            	MOV_JNO_TXN_FEE_TXN_FEE_CMPT_EV_ID AS TXN_FEE_CMPT_EV_ID,
+            	MOV_JNO_TXN_FEE_SRC_DL AS SRC_DL,
+            	MOV_JNO_TXN_FEE_EV_ID AS EV_ID,
+            	MOV_SRT_EWM_EV_X_CL_R_CL_CD AS CL_CD,
+            	MOV_JNO_TXN_FEE_MSTR_SRC_STM_CD AS MSTR_SRC_STM_CD,
+            	MOV_JNO_TXN_FEE_MSTR_SRC_STM_KEY AS MSTR_SRC_STM_KEY,
+            	MOV_JNO_TXN_FEE_VLD_FROM_TMS AS VLD_FROM_TMS,
+            	MOV_JNO_TXN_FEE_VLD_TO_TMS AS VLD_TO_TMS,
+            	MOV_JNO_TXN_FEE_PRIM_AR_ID AS PRIM_AR_ID,
+            	MOV_JNO_TXN_FEE_TXN_BOOK_DT AS TXN_BOOK_DT,
+            	MOV_JNO_TXN_FEE_TXN_CCY_AMT AS TXN_CCY_AMT,
+            	MOV_JNO_TXN_FEE_TXN_CCY_CL_CD AS TXN_CCY_CL_CD,
+            	MOV_JNO_TXN_FEE_TXN_RSN_TP_CL_CD AS TXN_RSN_TP_CL_CD,
+            	MOV_JNO_TXN_FEE_LDGR_CCY_AMT AS LDGR_CCY_AMT,
+            	MOV_JNO_TXN_FEE_LDGR_CCY_CL_CD AS LDGR_CCY_CL_CD,
+            	MOV_JNO_TXN_FEE_DATA_DT AS DATA_DT,
+            	MOV_JNO_TXN_FEE_FCY_RK AS FCY_RK,
+            	MOV_JNO_TXN_FEE_TXN_FEE_TXN_CCY_AMT AS TXN_FEE_TXN_CCY_AMT,
+            	MOV_JNO_TXN_FEE_TXN_FEE_CCY_CL_CD AS TXN_FEE_CCY_CL_CD
+        FROM
+            {{ ref('jno_ewm_ev_x_cl_r') }} AS JNO_EWM_EV_X_CL_R 
+)
+
+SELECT * FROM mov_jno_ewm_ev_x_cl_r
+
