@@ -18,8 +18,8 @@ SELECT
             	MOV_SRT_EWM_IP.VLD_FROM_TMS AS MOV_SRT_EWM_IP_VLD_FROM_TMS
         FROM
             {{ ref('mov_srt_ar_x_ip_r_rou') }} AS MOV_SRT_AR_X_IP_R_ROU
-            LEFT OUTER JOIN {{ ref('mov_srt_ewm_ip') }} AS MOV_SRT_EWM_IP ON MOV_SRT_AR_X_IP_R_ROU.IP_ID=MOV_SRT_EWM_IP.IP_ID
-            AND MOV_SRT_AR_X_IP_R_ROU.SRC_DL=MOV_SRT_EWM_IP.SRC_DL 
+            LEFT OUTER JOIN {{ ref('mov_srt_ewm_ip') }} AS MOV_SRT_EWM_IP ON MOV_SRT_EWM_IP.IP_ID=MOV_SRT_AR_X_IP_R_ROU.IP_ID
+            AND MOV_SRT_EWM_IP.SRC_DL=MOV_SRT_AR_X_IP_R_ROU.SRC_DL 
 )
 
 SELECT * FROM jno_ip_v
