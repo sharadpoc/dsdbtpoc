@@ -34,7 +34,6 @@ models:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
-
 vars:
   PM_PCS_PERIOD: '2024-02-02 00:00:00'
   PM_PCS_ID: 1
