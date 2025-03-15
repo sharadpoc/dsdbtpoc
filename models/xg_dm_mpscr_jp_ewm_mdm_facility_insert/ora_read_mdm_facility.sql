@@ -26,7 +26,7 @@ SELECT
             	FCY_VORTEX_ID,
             	DATE_FROM AS TGT_DATE_FROM
         FROM
-            XG_PS_RDB_DM_MPSCR_DATABASE_XG_RDB_DM_SCHEMA_MPSCR_{{var('xg_pm_tgttbl_insert__stbl_')}}
+            XG_PS_RDB_DM_MPSCR_DATABASE_XG_RDB_DM_SCHEMA_MPSCR_{{var('xg_pm_tgttbl_insert')}}
         WHERE
             SRC_DL='{{var("xg_pm_src_dl")}}'
             AND DEL_IN_SRC_STM_F=0

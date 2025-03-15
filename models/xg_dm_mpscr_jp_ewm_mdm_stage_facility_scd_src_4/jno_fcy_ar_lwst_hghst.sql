@@ -30,8 +30,8 @@ SELECT
             	MOV_SRT_AR_X_R_HIGHEST.HIGHEST_FCY_IN_HRY AS MOV_SRT_AR_X_R_HIGHEST_HIGHEST_FCY_IN_HRY
         FROM
             {{ ref('mov_srt_fcy_lwst_lvl') }} AS MOV_SRT_FCY_LWST_LVL
-            LEFT OUTER JOIN {{ ref('mov_srt_ar_x_r_highest') }} AS MOV_SRT_AR_X_R_HIGHEST ON MOV_SRT_FCY_LWST_LVL.SRC_DL=MOV_SRT_AR_X_R_HIGHEST.SRC_DL
-            AND MOV_SRT_FCY_LWST_LVL.AR_ID=MOV_SRT_AR_X_R_HIGHEST.AR_ID 
+            LEFT OUTER JOIN {{ ref('mov_srt_ar_x_r_highest') }} AS MOV_SRT_AR_X_R_HIGHEST ON MOV_SRT_AR_X_R_HIGHEST.SRC_DL=MOV_SRT_FCY_LWST_LVL.SRC_DL
+            AND MOV_SRT_AR_X_R_HIGHEST.AR_ID=MOV_SRT_FCY_LWST_LVL.AR_ID 
 )
 
 SELECT * FROM jno_fcy_ar_lwst_hghst

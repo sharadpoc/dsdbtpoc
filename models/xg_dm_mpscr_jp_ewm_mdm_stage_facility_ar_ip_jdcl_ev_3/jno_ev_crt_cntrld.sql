@@ -16,8 +16,8 @@ SELECT
             	MOV_SRT_JDCL_CRT_CTRL.ACT_END_DT AS MOV_SRT_JDCL_CRT_CTRL_ACT_END_DT
         FROM
             {{ ref('mov_srt_ev_id') }} AS MOV_SRT_EV_ID
-            LEFT OUTER JOIN {{ ref('mov_srt_jdcl_crt_ctrl') }} AS MOV_SRT_JDCL_CRT_CTRL ON MOV_SRT_EV_ID.SRC_DL=MOV_SRT_JDCL_CRT_CTRL.SRC_DL
-            AND MOV_SRT_EV_ID.EV_ID=MOV_SRT_JDCL_CRT_CTRL.EV_ID 
+            LEFT OUTER JOIN {{ ref('mov_srt_jdcl_crt_ctrl') }} AS MOV_SRT_JDCL_CRT_CTRL ON MOV_SRT_JDCL_CRT_CTRL.SRC_DL=MOV_SRT_EV_ID.SRC_DL
+            AND MOV_SRT_JDCL_CRT_CTRL.EV_ID=MOV_SRT_EV_ID.EV_ID 
 )
 
 SELECT * FROM jno_ev_crt_cntrld
