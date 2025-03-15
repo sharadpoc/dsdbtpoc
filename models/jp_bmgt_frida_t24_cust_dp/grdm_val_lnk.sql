@@ -10,7 +10,7 @@ SELECT
         FROM
             {{ source('DM_MPSCR', 'CL_CV_V') }}
         WHERE
-            TRUNC(VLD_TO_TMS)=PARSE_TIMESTAMP('%d-MON-%Y', "31-DEC-9999") 
+            DATE_TRUNC(VLD_TO_TMS, day)=PARSE_TIMESTAMP('%d-%b-%Y', '31-DEC-9999') 
 )
 
 SELECT * FROM grdm_val_lnk

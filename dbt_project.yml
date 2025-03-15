@@ -43,3 +43,5 @@ vars:
   xg_pm_business_tms: '235959'
   xg_pm_tgttbl: 'mdm_credit_risk_rating'
   xg_pm_tgttbl_update: 'mdm_credit_risk_rating_upd_del'
+  cb_pm_strt_busdate: '20240328'
+  cb_pm_end_busdate: '20240328'
