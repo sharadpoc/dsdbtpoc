@@ -29,8 +29,8 @@ SELECT
             	MOV_SRT_EWM_EV_X_CL_R.CL_CD AS MOV_SRT_EWM_EV_X_CL_R_CL_CD
         FROM
             {{ ref('mov_jno_txn_fee') }} AS MOV_JNO_TXN_FEE
-            LEFT OUTER JOIN {{ ref('mov_srt_ewm_ev_x_cl_r') }} AS MOV_SRT_EWM_EV_X_CL_R ON MOV_JNO_TXN_FEE.EV_ID=MOV_SRT_EWM_EV_X_CL_R.EV_ID
-            AND MOV_JNO_TXN_FEE.SRC_DL=MOV_SRT_EWM_EV_X_CL_R.SRC_DL 
+            LEFT OUTER JOIN {{ ref('mov_srt_ewm_ev_x_cl_r') }} AS MOV_SRT_EWM_EV_X_CL_R ON MOV_SRT_EWM_EV_X_CL_R.EV_ID=MOV_JNO_TXN_FEE.EV_ID
+            AND MOV_SRT_EWM_EV_X_CL_R.SRC_DL=MOV_JNO_TXN_FEE.SRC_DL 
 )
 
 SELECT * FROM jno_ewm_ev_x_cl_r
