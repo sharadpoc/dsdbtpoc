@@ -7,6 +7,7 @@ WITH mov_xfm_fcy_ar_tp AS (
 SELECT
             		MOV_SRT_FNL_FCY_AR_TP.AR_ID AS AR_ID,
             	MOV_SRT_FNL_FCY_AR_TP.FCY_AR_TP AS FCY_AR_TP,
+            	NULL AS SYS_INRT_TMS,
             	MOV_SRT_FNL_FCY_AR_TP.SRC_DL AS SRC_DL,
             	MOV_SRT_FNL_FCY_AR_TP.DATA_DT AS DATA_DT,
             	MOV_SRT_FNL_FCY_AR_TP.VLD_FROM_TMS AS VLD_FROM_TMS,

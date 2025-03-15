@@ -3,7 +3,7 @@
  materialized='table',
  post_hook="
  INSERT INTO
-            {{ source('DM_MPSCR', '{{var('xg_pm_tgttbl')}}') }}
+            {{ source('DM_MPSCR', var('xg_pm_tgttbl')) }}
         SELECT
              *
         FROM

@@ -2,11 +2,11 @@
 # Name your project! Project names should contain only lowercase characters
 # and underscores. A good package name should reflect your organization's
 # name or the intended use of these models
-name: 'ingpoc'
+name: 'templateproject'
 version: '1.0.0'
 
 # This setting configures which "profile" dbt uses for this project.
-profile: 'ingpoc'
+profile: 'templateproject'
 
 # These configurations specify where dbt should look for different types of files.
 # The `model-paths` config, for example, states that models in this project can be
@@ -30,18 +30,16 @@ clean-targets:         # directories to be removed by `dbt clean`
 # directory as views. These settings can be overridden in the individual model
 # files using the `{{ config(...) }}` macro.
 models:
-  ingpoc:
+  templateproject:
     # Config indicated by + and applies to all files under models/example/
     example:
       +materialized: view
 
+
 vars:
-  PM_PCS_PERIOD: '2024-02-02 00:00:00'
-  PM_PCS_ID: 1
   xg_pm_src_dl: 'xg_pm_src_dl'
   xg_pm_selection_date: '20210103'
   xg_pm_business_tms: '235959'
   xg_pm_tgttbl: 'mdm_facility'
-  xg_pm_tgttbl_insert: 'mdm_text'
-  xg_pm_tgttbl_update: 'mdm_test'
-
+  xg_pm_tgttbl_insert: 'mdm_facility'
+  xg_pm_tgttbl_update: 'mdm_facility'

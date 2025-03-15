@@ -14,7 +14,7 @@ SELECT
             	FCY_RK,
             	DATA_DT
         FROM
-            {{ ref('ora_read_ewm_mdm_stage_fcy_ar') }} AS ORA_READ_EWM_MDM_STAGE_FCY_AR
+            {{ ref('ora_read_ewm_mdm_stage_fcy_ar_m1') }} AS ORA_READ_EWM_MDM_STAGE_FCY_AR
         ORDER BY
             SRC_DL ASC,
             AR_ID ASC 
