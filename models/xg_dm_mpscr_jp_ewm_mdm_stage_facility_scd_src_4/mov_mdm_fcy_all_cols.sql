@@ -1,11 +1,8 @@
 
 {{config(
-  materialized='ephemeral'
+  materialized='table'
 )}}
 
-WITH  AS (
 
-)
-
-SELECT * FROM 
+SELECT 1 as  dummy
 
