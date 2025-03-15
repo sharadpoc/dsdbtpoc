@@ -1,6 +1,6 @@
 
 {{ config(
- materialized='table',
+ materialized='table',enabled = false,
  post_hook="
  INSERT INTO
             {{ source('DM_MPSCR', var('xg_pm_tgttbl')) }}
