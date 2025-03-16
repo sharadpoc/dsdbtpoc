@@ -1,6 +1,6 @@
 
 {{config(
-  materialized='table'
+  materialized='ephemeral'
 )}}
 
 WITH wri_xfm_mdm_fcy_updt AS (
