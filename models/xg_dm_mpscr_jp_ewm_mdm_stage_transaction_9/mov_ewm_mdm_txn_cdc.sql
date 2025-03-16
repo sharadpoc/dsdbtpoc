@@ -1,8 +1,1 @@
-
-{{config(
-  materialized='table'
-)}}
-
-
-SELECT 1 as  dummy
-
+select 1 as dummy
