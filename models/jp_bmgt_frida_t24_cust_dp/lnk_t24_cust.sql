@@ -5,7 +5,7 @@
 
 WITH lnk_t24_cust AS (
 SELECT
-            		CUSTOMER_ID,
+            	CUSTOMER_ID,
             	NAME_1,
             	NAME_2,
             	MNEMONIC,

@@ -1,5 +1,5 @@
 {{ config(
-    materialized='ephemeral'
+    materialized='ephemeral',enabled = false ,
 ) }}
 
 WITH _stbl__gdil_ifl_owner_bmg_t24_customer_dp__stbl_ AS (

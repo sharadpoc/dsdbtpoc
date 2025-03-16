@@ -4,8 +4,8 @@
 )}}
 
 WITH lnk_ifl_cust AS (
-SELECT
-            		TRF_IFL_TGT_NAME_1 AS NAME_1,
+SELECT          TRF_IFL_TGT_CUSTOMER_ID as CUSTOMER_ID,
+            	TRF_IFL_TGT_NAME_1 AS NAME_1,
             	TRF_IFL_TGT_NAME_2 AS NAME_2,
             	TRF_IFL_TGT_MNEMONIC AS MNEMONIC,
             	TRF_IFL_TGT_SECTOR AS SECTOR,

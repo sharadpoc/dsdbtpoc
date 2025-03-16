@@ -4,10 +4,13 @@
 )}}
 
 WITH trf_ifl_tgt AS (
-SELECT
-            		LNK_T24_CUST.REL_END_DATE AS REL_END_DATE,
+SELECT          LNK_T24_CUST.CUSTOMER_ID,
+            	LNK_T24_CUST.REL_END_DATE AS REL_END_DATE,
             	LNK_T24_CUST.ODS_BUSINESS_DATE AS ODS_BUSINESS_DATE,
-            	LNK_T24_CUST.GRID_ID AS ORG_INR_PTY_FLAG,
+            	'1' AS ORG_INR_PTY_FLAG,
+                'T24APP_WB' AS SRC_STM_CD,
+                CONCAT('SDM|CL_CV|IP_IDENTN_TP.',LNK_T24_CUST.GRID_ID) AS IP_IDENTN_TP,
+                {{ var("cb_pm_end_busdate")}} as REPORTING_DATE,
             	LNK_T24_CUST.NAME_1 AS NAME_1,
             	LNK_T24_CUST.NAME_2 AS NAME_2,
             	LNK_T24_CUST.MNEMONIC AS MNEMONIC,

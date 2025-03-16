@@ -5,7 +5,7 @@
 
 WITH hv_t24_cust_dp_src AS (
 SELECT
-            		CUSTOMER_ID,
+            	CUSTOMER_ID,
             	NAME_1,
             	NAME_2,
             	MNEMONIC,
@@ -28,7 +28,7 @@ SELECT
             	REL_END_DATE,
             	ODS_BUSINESS_DATE
         FROM
-            {{ source('DM_MPSCR', 'BMG_T24_CUSTOMER_DP') }}
+            {{ source('DM_MPSCR', 'BMGTSD01_T24_CUSTOMER_V4') }}
         WHERE
             SUBSTR(ODS_BUSINESS_DATE, 1,
                              8) >= '{{var("cb_pm_strt_busdate")}}'
