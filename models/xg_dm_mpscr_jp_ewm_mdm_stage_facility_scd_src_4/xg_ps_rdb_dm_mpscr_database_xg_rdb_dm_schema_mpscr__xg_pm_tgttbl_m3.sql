@@ -3,7 +3,7 @@
  materialized='table',
  post_hook="
  INSERT INTO
-    {{ source('DM_MPSCR', 'EWM_MDM_STAGE_FACILITY') }}
+    {{ source('DBT_SID2', 'EWM_MDM_STAGE_FACILITY') }}
 (DATA_DT,
 FCY_ID,
 SRC_STM_ID,

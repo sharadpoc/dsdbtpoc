@@ -35,3 +35,10 @@ sources:
   - name: "EWM_MDM_STAGE_FCY_AR_IP_JDCL"
   - name: "EWM_AR_IDENTN_M"
   - name: "MDM_FACILITY_UPD_DEL"
+
+- name: "DBT_SID2"
+  description: "Source tables"
+  database: "cognizant-pocngdap-01"
+  schema: "dbt_sid2"
+  tables:
+    - name: "EWM_MDM_STAGE_FACILITY"
