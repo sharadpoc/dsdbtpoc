@@ -1,6 +1,6 @@
 
 {{ config(
- materialized='ephemeral',
+ materialized='table',
  post_hook="
  INSERT INTO
     {{ source('DM_MPSCR', 'EWM_MDM_STAGE_FCY_AR_TP') }}

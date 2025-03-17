@@ -1,6 +1,6 @@
 
 {{config(
-  materialized='ephemeral'
+  materialized='table'
 )}}
 
 WITH wri_fcy_ar_tp AS (

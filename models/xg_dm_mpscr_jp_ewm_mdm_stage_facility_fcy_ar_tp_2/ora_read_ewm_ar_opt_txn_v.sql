@@ -6,14 +6,14 @@
 WITH ora_read_ewm_ar_opt_txn_v AS (
 SELECT
     SRC_DL,
-    PARSE_TIMESTAMP('%Y%m%d', "{{var('xg_pm_selection_date')}}") AS DATA_DT,
+    PARSE_DATETIME('%Y%m%d', "{{var('xg_pm_selection_date')}}") AS DATA_DT,
     VLD_FROM_TMS,
     MSTR_SRC_STM_CD,
     MSTR_SRC_STM_KEY,
     AR_ID,
     'OPT_TXN' AS FCY_AR_TP
 FROM
-    {{ source('DM_MPSCR', 'EWM_AR_OPT_TXN_V') }}
+    {{ source('DBT_SID2', 'EWM_AR_OPT_TXN_V') }}
 WHERE
     1 = 1
     AND SRC_DL = '{{var("xg_pm_src_dl")}}'

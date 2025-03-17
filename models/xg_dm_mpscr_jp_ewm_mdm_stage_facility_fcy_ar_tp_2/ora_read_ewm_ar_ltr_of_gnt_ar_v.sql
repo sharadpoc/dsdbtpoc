@@ -6,21 +6,21 @@
 WITH ora_read_ewm_ar_ltr_of_gnt_ar_v AS (
 SELECT
     SRC_DL,
-    PARSE_TIMESTAMP('%Y%m%d', "{{var('xg_pm_selection_date')}}") AS DATA_DT,
+    PARSE_DATETIME('%Y%m%d', "{{var('xg_pm_selection_date')}}") AS DATA_DT,
     CAST(VLD_FROM_TMS AS DATETIME) as VLD_FROM_TMS,
     MSTR_SRC_STM_CD,
     MSTR_SRC_STM_KEY,
     AR_ID,
     'LTR_OF_GNT_AR' AS FCY_AR_TP
 FROM
-    {{ source('DM_MPSCR', 'EWM_AR_LTR_OF_GNT_AR_V') }}
+    {{ source('DBT_SID2', 'EWM_AR_LTR_OF_GNT_AR_V') }}
 WHERE
     1 = 1
-    AND VLD_FROM_TMS <= PARSE_TIMESTAMP(
+    AND VLD_FROM_TMS <= PARSE_DATETIME(
         '%Y%m%d%H%M%S',
         "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
     )
-    AND PARSE_TIMESTAMP(
+    AND PARSE_DATETIME(
         '%Y%m%d%H%M%S',
         "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
     ) < VLD_TO_TMS

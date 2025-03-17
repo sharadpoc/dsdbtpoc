@@ -10,10 +10,10 @@ SELECT
     MSTR_SRC_STM_KEY,
     MSTR_SRC_STM_CD,
     VLD_FROM_TMS,
-    PARSE_TIMESTAMP('%Y%m%d', "{{var('xg_pm_selection_date')}}") AS DATA_DT,
+    PARSE_DATETIME('%Y%m%d', "{{var('xg_pm_selection_date')}}") AS DATA_DT,
     'RCVB_FNC_AR' AS FCY_AR_TP
 FROM
-    {{ source('DM_MPSCR', 'EWM_AR_RCVB_FNC_AR_V') }}
+    {{ source('DBT_SID2', 'EWM_AR_RCVB_FNC_AR_V') }}
 WHERE
     1 = 1
     AND SRC_DL = '{{var("xg_pm_src_dl")}}'

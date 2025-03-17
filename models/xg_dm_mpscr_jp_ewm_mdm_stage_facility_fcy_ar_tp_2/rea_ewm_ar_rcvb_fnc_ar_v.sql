@@ -6,12 +6,13 @@
 WITH rea_ewm_ar_rcvb_fnc_ar_v AS (
 SELECT
     SRC_DL,
-    AR_ID,
-    MSTR_SRC_STM_CD,
-    FCY_AR_TP,
-    MSTR_SRC_STM_KEY,
+    DATA_DT,
     VLD_FROM_TMS,
-    DATA_DT
+    MSTR_SRC_STM_CD,
+    MSTR_SRC_STM_KEY,
+    AR_ID,
+    FCY_AR_TP
+   
 FROM
     {{ ref('ora_read_ewm_ar_rcvb_fnc_ar_v') }} AS ORA_READ_EWM_AR_RCVB_FNC_AR_V
 )
