@@ -14,8 +14,8 @@ FROM
             REA_MDM_STAGE_FCY_AR_TP.LMTG_AR_MSTR_SRC_STM_KEY AS LMTG_AR_MSTR_SRC_STM_KEY,
             REA_MDM_STAGE_FCY_AR_TP.FCY_AR_TP AS FCY_AR_TP,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                OBJ_AR_ID ASC
+                PARTITION BY SRC_DL ,
+                OBJ_AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     OBJ_AR_ID ASC

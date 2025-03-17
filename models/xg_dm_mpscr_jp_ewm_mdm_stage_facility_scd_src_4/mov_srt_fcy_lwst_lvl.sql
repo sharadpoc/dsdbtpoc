@@ -30,8 +30,8 @@ FROM
             MOV_FCY_HGR_FCY.CR_OBLG_DFLTD AS CR_OBLG_DFLTD,
             MOV_FCY_HGR_FCY.UNDRL_AR_ID AS UNDRL_AR_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC
+                PARTITION BY SRC_DL ,
+                AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC

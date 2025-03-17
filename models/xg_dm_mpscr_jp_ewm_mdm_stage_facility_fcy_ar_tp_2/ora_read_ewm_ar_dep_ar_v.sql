@@ -7,7 +7,7 @@ WITH ora_read_ewm_ar_dep_ar_v AS (
 SELECT
     SRC_DL,
     PARSE_TIMESTAMP('%Y%m%d', "{{var('xg_pm_selection_date')}}") AS DATA_DT,
-    VLD_FROM_TMS,
+    CAST(VLD_FROM_TMS AS DATETIME)  as VLD_FROM_TMS,
     MSTR_SRC_STM_CD,
     MSTR_SRC_STM_KEY,
     AR_ID,

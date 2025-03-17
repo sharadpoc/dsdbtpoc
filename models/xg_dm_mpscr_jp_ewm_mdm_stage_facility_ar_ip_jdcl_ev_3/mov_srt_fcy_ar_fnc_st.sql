@@ -23,8 +23,8 @@ FROM
             MOV_FCY_AR_FNC_ST.FCY_AR_TP AS FCY_AR_TP,
             MOV_FCY_AR_FNC_ST.AR_CL_CD AS AR_CL_CD,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC
+                PARTITION BY SRC_DL ,
+                AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC

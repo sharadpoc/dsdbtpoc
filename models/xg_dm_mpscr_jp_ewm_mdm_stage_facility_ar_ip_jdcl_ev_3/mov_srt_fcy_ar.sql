@@ -18,8 +18,8 @@ FROM
             REA_STAGE_FCY_AR.FCY_RK AS FCY_RK,
             REA_STAGE_FCY_AR.DATA_DT AS DATA_DT,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC
+                PARTITION BY SRC_DL ,
+                AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC

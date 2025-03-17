@@ -15,8 +15,8 @@ FROM
             REA_EWM_EV_JDCL_EV_V.ACT_STRT_DT AS ACT_STRT_DT,
             REA_EWM_EV_JDCL_EV_V.ACT_END_DT AS ACT_END_DT,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                EV_ID ASC
+                PARTITION BY SRC_DL ,
+                EV_ID 
                 ORDER BY
                     SRC_DL ASC,
                     EV_ID ASC

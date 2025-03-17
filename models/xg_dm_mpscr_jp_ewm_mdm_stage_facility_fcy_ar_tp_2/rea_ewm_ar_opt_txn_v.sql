@@ -1,6 +1,6 @@
 
 {{config(
-  materialized='ephemeral'
+  materialized='table'
 )}}
 
 WITH rea_ewm_ar_opt_txn_v AS (

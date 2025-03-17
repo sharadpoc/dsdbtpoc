@@ -1,14 +1,54 @@
 
 {{ config(
- materialized='table',
+ materialized='ephemeral',
  post_hook="
  INSERT INTO
     {{ source(
         'DM_MPSCR',
-        var('xg_pm_tgttbl_insert')
+        'MDM_FACILITY'
     ) }}
-SELECT
-    *
+(FCY_ID,
+SRC_ID,
+DATE_FROM,
+DATE_TO,
+AR_ID,
+SRC_DL,
+FCY_RK,
+FCY_AR_TP,
+HIGHER_FCY_RK,
+HIGHEST_FCY_RK,
+LOWEST_LVL_IND,
+SPSDG_FCY_RK,
+COURT_CTRLD_WRKOUT_FILL_DT,
+COURT_CTRLD_WRKOUT_FCY,
+OUT_OF_COURT_WRKOUT_FCY,
+SPSDG_FCY_DT,
+COURT_CTRLD_WRKOUT_CLS_DT,
+CR_OBLG_DFLTD,
+FCY_VORTEX_ID,
+SYS_INRT_TMS,
+DEL_IN_SRC_STM_F)
+                                                        SELECT FCY_ID,
+SRC_ID,
+DATE_FROM,
+DATE_TO,
+AR_ID,
+SRC_DL,
+FCY_RK,
+FCY_AR_TP,
+HIGHER_FCY_RK,
+HIGHEST_FCY_RK,
+LOWEST_LVL_IND,
+SPSDG_FCY_RK,
+COURT_CTRLD_WRKOUT_FILL_DT,
+COURT_CTRLD_WRKOUT_FCY,
+OUT_OF_COURT_WRKOUT_FCY,
+SPSDG_FCY_DT,
+COURT_CTRLD_WRKOUT_CLS_DT,
+CR_OBLG_DFLTD,
+FCY_VORTEX_ID,
+SYS_INRT_TMS,
+DEL_IN_SRC_STM_F
 FROM
     {{ ref('wri_xfm_mdm_fcy_inrt') }}
  "

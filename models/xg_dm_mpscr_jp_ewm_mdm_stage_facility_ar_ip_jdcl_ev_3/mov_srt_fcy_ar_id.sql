@@ -21,8 +21,8 @@ FROM
             MOV_FCY_AR.LMTG_AR_MSTR_SRC_STM_KEY AS LMTG_AR_MSTR_SRC_STM_KEY,
             MOV_FCY_AR.FCY_AR_TP AS FCY_AR_TP,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC
+                PARTITION BY SRC_DL ,
+                AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC

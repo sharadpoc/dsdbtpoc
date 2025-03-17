@@ -31,8 +31,8 @@ FROM
             MOV_FCY_HGST_FCY_AR.CR_OBLG_DFLTD AS CR_OBLG_DFLTD,
             MOV_FCY_HGST_FCY_AR.UNDRL_AR_ID AS UNDRL_AR_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                HIGHEST_FCY_ID ASC
+                PARTITION BY SRC_DL ,
+                HIGHEST_FCY_ID 
                 ORDER BY
                     SRC_DL ASC,
                     HIGHEST_FCY_ID ASC

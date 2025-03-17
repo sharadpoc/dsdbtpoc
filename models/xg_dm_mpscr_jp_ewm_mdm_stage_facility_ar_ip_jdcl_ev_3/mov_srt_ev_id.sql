@@ -14,8 +14,8 @@ FROM
             MOV_JNO_EWM_AR_IP_EV.IP_ID AS IP_ID,
             MOV_JNO_EWM_AR_IP_EV.EV_ID AS EV_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                EV_ID ASC
+                PARTITION BY SRC_DL ,
+                EV_ID 
                 ORDER BY
                     SRC_DL ASC,
                     EV_ID ASC

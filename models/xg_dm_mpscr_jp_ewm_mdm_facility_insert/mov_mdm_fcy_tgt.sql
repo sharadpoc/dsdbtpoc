@@ -30,11 +30,11 @@ FROM
             REA_MDM_FACILITY.FCY_VORTEX_ID AS TGT_FCY_VORTEX_ID,
             REA_MDM_FACILITY.TGT_DATE_FROM AS TGT_DATE_FROM,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_ID ASC,
-                FCY_ID ASC,
-                AR_ID ASC,
-                SRC_DL ASC,
-                DATE_FROM ASC
+                PARTITION BY SRC_ID ,
+                FCY_ID ,
+                AR_ID ,
+                SRC_DL ,
+                DATE_FROM 
                 ORDER BY
                     SRC_ID ASC,
                     FCY_ID ASC,

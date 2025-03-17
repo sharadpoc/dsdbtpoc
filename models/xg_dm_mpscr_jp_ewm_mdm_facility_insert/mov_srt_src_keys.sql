@@ -29,11 +29,11 @@ FROM
             REA_MDM_FCY_SCD.CR_OBLG_DFLTD AS CR_OBLG_DFLTD,
             REA_MDM_FCY_SCD.FCY_VORTEX_ID AS FCY_VORTEX_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_STM_ID ASC,
-                FCY_ID ASC,
-                AR_ID ASC,
-                SRC_DL ASC,
-                DATE_FROM ASC
+                PARTITION BY SRC_STM_ID ,
+                FCY_ID ,
+                AR_ID ,
+                SRC_DL ,
+                DATE_FROM 
                 ORDER BY
                     SRC_STM_ID ASC,
                     FCY_ID ASC,

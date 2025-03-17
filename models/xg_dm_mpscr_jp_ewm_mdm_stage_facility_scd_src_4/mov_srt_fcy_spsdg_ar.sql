@@ -27,8 +27,8 @@ FROM
             MOV_FCY_SPSDG_AR.UNDRL_AR_ID AS UNDRL_AR_ID,
             MOV_FCY_SPSDG_AR.SUBJ_AR_ID AS SUBJ_AR_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                SUBJ_AR_ID ASC
+                PARTITION BY SRC_DL ,
+                SUBJ_AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     SUBJ_AR_ID ASC

@@ -25,8 +25,8 @@ FROM
             REA_FCYAR_IP_JCL_EV.CR_OBLG_DFLTD AS CR_OBLG_DFLTD,
             REA_FCYAR_IP_JCL_EV.UNDRL_AR_ID AS UNDRL_AR_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC
+                PARTITION BY SRC_DL ,
+                AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC

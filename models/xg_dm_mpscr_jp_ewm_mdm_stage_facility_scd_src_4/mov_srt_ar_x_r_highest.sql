@@ -13,8 +13,8 @@ FROM
             MOV_RDU_HIGHEST_FACILITY.SRC_DL AS SRC_DL,
             MOV_RDU_HIGHEST_FACILITY.HIGHEST_FCY_IN_HRY AS HIGHEST_FCY_IN_HRY,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC
+                PARTITION BY SRC_DL ,
+                AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC

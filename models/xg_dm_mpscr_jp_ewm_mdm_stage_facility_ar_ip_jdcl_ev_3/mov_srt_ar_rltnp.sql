@@ -15,8 +15,8 @@ FROM
             MOV_AR_RLTNP.SUBJ_AR_ID AS SUBJ_AR_ID,
             MOV_AR_RLTNP.AR_X_AR_RLTNP_TP_CL_CD AS AR_X_AR_RLTNP_TP_CL_CD,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC
+                PARTITION BY SRC_DL ,
+                AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC

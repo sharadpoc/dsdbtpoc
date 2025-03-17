@@ -17,10 +17,10 @@ FROM
             MOV_JNO_EV_CRT_CNTRLD.AR_ID AS AR_ID,
             MOV_JNO_EV_CRT_CNTRLD.IP_ID AS IP_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC,
-                ACT_STRT_DT DESC,
-                ACT_END_DT DESC
+                PARTITION BY SRC_DL ,
+                AR_ID ,
+                ACT_STRT_DT ,
+                ACT_END_DT 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC,

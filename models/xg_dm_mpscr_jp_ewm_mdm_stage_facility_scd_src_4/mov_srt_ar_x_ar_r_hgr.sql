@@ -15,8 +15,8 @@ FROM
             MOV_AR_X_AR_HGR.HIGHEST_FCY_ID AS HIGHEST_FCY_ID,
             MOV_AR_X_AR_HGR.LEAF AS LEAF,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC
+                PARTITION BY SRC_DL ,
+                AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC

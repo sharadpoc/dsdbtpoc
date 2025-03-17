@@ -13,8 +13,8 @@ FROM
             MOV_FLT_RANK.AR_ID AS AR_ID,
             MOV_FLT_RANK.IP_ID AS IP_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                IP_ID ASC
+                PARTITION BY SRC_DL ,
+                IP_ID 
                 ORDER BY
                     SRC_DL ASC,
                     IP_ID ASC

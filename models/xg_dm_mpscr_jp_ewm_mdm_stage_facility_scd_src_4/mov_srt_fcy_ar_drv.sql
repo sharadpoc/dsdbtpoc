@@ -13,8 +13,8 @@ FROM
             MOV_FCY_AR_DRV.SUBJ_AR_ID AS SUBJ_AR_ID,
             MOV_FCY_AR_DRV.SPSDG_FCY_RK AS SPSDG_FCY_RK,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                SUBJ_AR_ID ASC
+                PARTITION BY SRC_DL ,
+                SUBJ_AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     SUBJ_AR_ID ASC

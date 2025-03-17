@@ -13,8 +13,8 @@ FROM
             REA_EWM_AR_X_CL_FNC_ST_R.AR_ID AS AR_ID,
             REA_EWM_AR_X_CL_FNC_ST_R.AR_CL_CD AS AR_CL_CD,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC
+                PARTITION BY SRC_DL ,
+                AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC

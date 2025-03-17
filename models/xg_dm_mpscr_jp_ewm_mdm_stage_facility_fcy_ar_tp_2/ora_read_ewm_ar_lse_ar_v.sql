@@ -9,7 +9,7 @@ SELECT
     AR_ID,
     MSTR_SRC_STM_KEY,
     MSTR_SRC_STM_CD,
-    VLD_FROM_TMS,
+    CAST(VLD_FROM_TMS AS DATETIME) as VLD_FROM_TMS,
     PARSE_TIMESTAMP('%Y%m%d', "{{var('xg_pm_selection_date')}}") AS DATA_DT,
     'LSE_AR' AS FCY_AR_TP
 FROM

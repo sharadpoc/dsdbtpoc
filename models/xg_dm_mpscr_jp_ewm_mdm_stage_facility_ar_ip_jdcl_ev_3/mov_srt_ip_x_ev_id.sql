@@ -13,8 +13,8 @@ FROM
             MOV_TP_CL_CD.EV_ID AS EV_ID,
             MOV_TP_CL_CD.IP_ID AS IP_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                IP_ID ASC
+                PARTITION BY SRC_DL ,
+                IP_ID 
                 ORDER BY
                     SRC_DL ASC,
                     IP_ID ASC

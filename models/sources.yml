@@ -34,3 +34,4 @@ sources:
   - name: "EWM_AR_X_CL_FNC_ST_R"
   - name: "EWM_MDM_STAGE_FCY_AR_IP_JDCL"
   - name: "EWM_AR_IDENTN_M"
+  - name: "MDM_FACILITY_UPD_DEL"

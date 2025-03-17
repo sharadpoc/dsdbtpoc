@@ -17,8 +17,8 @@ FROM
             MOV_MAX_ACT_DT.AR_ID AS AR_ID,
             MOV_MAX_ACT_DT.IP_ID AS IP_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC
+                PARTITION BY SRC_DL ,
+                AR_ID 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC

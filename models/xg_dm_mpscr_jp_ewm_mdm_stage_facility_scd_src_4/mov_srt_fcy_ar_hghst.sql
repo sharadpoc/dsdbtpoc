@@ -13,8 +13,8 @@ FROM
             MOV_FCY_AR_HGHST_FCY.HIGHEST_FCY_ID AS HIGHEST_FCY_ID,
             MOV_FCY_AR_HGHST_FCY.HIGHEST_FCY_RK AS HIGHEST_FCY_RK,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                HIGHEST_FCY_ID ASC
+                PARTITION BY SRC_DL ,
+                HIGHEST_FCY_ID 
                 ORDER BY
                     SRC_DL ASC,
                     HIGHEST_FCY_ID ASC

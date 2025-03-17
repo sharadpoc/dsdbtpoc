@@ -14,11 +14,11 @@ FROM
             MOV_AR_X_RLTNP_HGR.OBJ_AR_ID AS AR_ID,
             MOV_AR_X_RLTNP_HGR.SUBJ_AR_ID AS SUBJ_AR_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                OBJ_AR_ID ASC
+                PARTITION BY SRC_DL ,
+                OBJ_AR_ID 
                 ORDER BY
-                    SRC_DL ASC,
-                    OBJ_AR_ID ASC
+                    SRC_DL ,
+                    OBJ_AR_ID 
             ) AS RN
         FROM
             {{ ref('mov_ar_x_rltnp_hgr') }} AS MOV_AR_X_RLTNP_HGR

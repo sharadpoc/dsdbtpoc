@@ -13,8 +13,8 @@ FROM
             REA_EWM_IP_X_CL_FNC_ST_R.IP_ID AS IP_ID,
             REA_EWM_IP_X_CL_FNC_ST_R.IP_CL_CD AS IP_CL_CD,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                IP_ID ASC
+                PARTITION BY SRC_DL ,
+                IP_ID 
                 ORDER BY
                     SRC_DL ASC,
                     IP_ID ASC

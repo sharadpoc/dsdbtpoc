@@ -28,8 +28,8 @@ FROM
             MOV_JNO_COURT_CONTROLLED_1.ACT_STRT_DT AS ACT_STRT_DT,
             MOV_JNO_COURT_CONTROLLED_1.ACT_END_DT AS ACT_END_DT,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                IP_ID ASC
+                PARTITION BY SRC_DL ,
+                IP_ID 
                 ORDER BY
                     SRC_DL ASC,
                     IP_ID ASC

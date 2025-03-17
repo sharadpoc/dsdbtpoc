@@ -17,9 +17,9 @@ FROM
             MOV_FNL_FCY_AR_TP.MSTR_SRC_STM_CD AS MSTR_SRC_STM_CD,
             MOV_FNL_FCY_AR_TP.MSTR_SRC_STM_KEY AS MSTR_SRC_STM_KEY,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC,
-                VLD_FROM_TMS ASC
+                PARTITION BY SRC_DL ,
+                AR_ID ,
+                VLD_FROM_TMS 
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC,
