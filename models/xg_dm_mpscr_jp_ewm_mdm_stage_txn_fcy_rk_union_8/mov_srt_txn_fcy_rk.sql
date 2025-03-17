@@ -25,15 +25,15 @@ FROM
             MOV_FNL_TXN_FCY_RK.SRC_DL AS SRC_DL,
             MOV_FNL_TXN_FCY_RK.DATA_DT AS DATA_DT,
             ROW_NUMBER() OVER(
-                PARTITION BY PRIM_AR_ID ASC,
-                FCY_RK ASC,
-                SRC_DL ASC,
-                MSTR_SRC_STM_KEY ASC
+                PARTITION BY PRIM_AR_ID,
+                FCY_RK,
+                SRC_DL,
+                MSTR_SRC_STM_KEY
                 ORDER BY
-                    PRIM_AR_ID ASC,
-                    FCY_RK ASC,
-                    SRC_DL ASC,
-                    MSTR_SRC_STM_KEY ASC
+                    PRIM_AR_ID,
+                    FCY_RK,
+                    SRC_DL,
+                    MSTR_SRC_STM_KEY
             ) AS RN
         FROM
             {{ ref('mov_fnl_txn_fcy_rk') }} AS MOV_FNL_TXN_FCY_RK

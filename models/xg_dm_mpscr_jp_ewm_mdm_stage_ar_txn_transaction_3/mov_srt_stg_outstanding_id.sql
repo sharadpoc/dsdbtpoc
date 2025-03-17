@@ -15,9 +15,9 @@ FROM
             REA_EWM_MPS_TXN.DATA_DT AS DATA_DT,
             REA_EWM_MPS_TXN.SYS_INRT_TMS AS SYS_INRT_TMS,
             ROW_NUMBER() OVER(
-                PARTITION BY AR_ID ASC,
-                VLD_FROM_TMS ASC,
-                SRC_DL ASC
+                PARTITION BY AR_ID,
+                VLD_FROM_TMS,
+                SRC_DL
                 ORDER BY
                     AR_ID ASC,
                     VLD_FROM_TMS ASC,

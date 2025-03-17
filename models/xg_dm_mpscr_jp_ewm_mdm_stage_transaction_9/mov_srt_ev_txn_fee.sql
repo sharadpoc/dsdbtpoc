@@ -15,8 +15,8 @@ FROM
             REA_EWM_EV_TXN_FEE_CMPT_M.TXN_FEE_TXN_CCY_AMT AS TXN_FEE_TXN_CCY_AMT,
             REA_EWM_EV_TXN_FEE_CMPT_M.TXN_FEE_CCY_CL_CD AS TXN_FEE_CCY_CL_CD,
             ROW_NUMBER() OVER(
-                PARTITION BY EV_ID ASC,
-                SRC_DL ASC
+                PARTITION BY EV_ID,
+                SRC_DL
                 ORDER BY
                     EV_ID ASC,
                     SRC_DL ASC

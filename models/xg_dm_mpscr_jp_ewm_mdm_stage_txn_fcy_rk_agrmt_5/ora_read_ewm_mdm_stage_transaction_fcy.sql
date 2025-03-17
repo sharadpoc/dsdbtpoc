@@ -15,7 +15,7 @@ FROM
         'EWM_MDM_STAGE_TRANSACTION_FCY'
     ) }}
 WHERE
-    DATA_DT = PARSE_TIMESTAMP('%Y%m%d', "{{var('xg_pm_selection_date')}}")
+    DATA_DT = PARSE_DATETIME('%Y%m%d', "{{var('xg_pm_selection_date')}}")
     AND SRC_DL = '{{var("xg_pm_src_dl")}}'
 )
 

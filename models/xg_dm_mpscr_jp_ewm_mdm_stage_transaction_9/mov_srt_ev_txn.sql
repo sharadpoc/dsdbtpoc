@@ -26,8 +26,8 @@ FROM
             REA_EWM_MDM_STAGE_TXN_FCY_RK_UNION.DATA_DT AS DATA_DT,
             REA_EWM_MDM_STAGE_TXN_FCY_RK_UNION.FCY_RK AS FCY_RK,
             ROW_NUMBER() OVER(
-                PARTITION BY EV_ID ASC,
-                SRC_DL ASC
+                PARTITION BY EV_ID,
+                SRC_DL
                 ORDER BY
                     EV_ID ASC,
                     SRC_DL ASC

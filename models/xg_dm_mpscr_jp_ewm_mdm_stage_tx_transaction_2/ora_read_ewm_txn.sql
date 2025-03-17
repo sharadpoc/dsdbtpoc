@@ -27,7 +27,7 @@ FROM
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
@@ -45,43 +45,43 @@ FROM
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
-            VLD_FROM_TMS
+            CAST(VLD_FROM_TMS AS TIMESTAMP)
         FROM
             {{ source('DM_MPSCR', 'EWM_AR_OPT_TXN_V') }}
         WHERE
             SRC_DL = '{{var("xg_pm_src_dl")}}'
-            AND VLD_FROM_TMS <= PARSE_TIMESTAMP(
+            AND VLD_FROM_TMS <= PARSE_DATETIME(
                 '%Y%m%d%H%M%S',
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             )
-            AND PARSE_TIMESTAMP(
+            AND PARSE_DATETIME(
                 '%Y%m%d%H%M%S',
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
-            VLD_FROM_TMS
+            CAST(VLD_FROM_TMS AS TIMESTAMP)
         FROM
             {{ source('DM_MPSCR', 'EWM_AR_RPRCH_AGRM_TXN_V') }}
         WHERE
             SRC_DL = '{{var("xg_pm_src_dl")}}'
-            AND VLD_FROM_TMS <= PARSE_TIMESTAMP(
+            AND VLD_FROM_TMS <= PARSE_DATETIME(
                 '%Y%m%d%H%M%S',
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             )
-            AND PARSE_TIMESTAMP(
+            AND PARSE_DATETIME(
                 '%Y%m%d%H%M%S',
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
@@ -99,7 +99,7 @@ FROM
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,

@@ -5,7 +5,10 @@
 
 WITH mov_srt_ewm_mdm_stage_ar_txn AS (
 SELECT
-    *
+     SRC_DL,
+OBJ_AR_ID,
+PRIM_AR_ID,
+AR_ID
 FROM
     (
         SELECT
@@ -14,8 +17,8 @@ FROM
             REA_EWM_MDM_STAGE_AR_TXN.PRIM_AR_ID AS PRIM_AR_ID,
             REA_EWM_MDM_STAGE_AR_TXN.AR_ID AS AR_ID,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                PRIM_AR_ID ASC
+                PARTITION BY SRC_DL,
+                PRIM_AR_ID
                 ORDER BY
                     SRC_DL ASC,
                     PRIM_AR_ID ASC

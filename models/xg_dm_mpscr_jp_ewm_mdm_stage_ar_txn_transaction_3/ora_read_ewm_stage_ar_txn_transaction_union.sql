@@ -25,9 +25,9 @@ FROM
             ) }}
         WHERE
             SRC_DL = '{{var("xg_pm_src_dl")}}'
-            AND DATA_DT = PARSE_TIMESTAMP('%Y%m%d', "{{var('xg_pm_selection_date')}}")
+            AND DATA_DT = PARSE_DATETIME('%Y%m%d', "{{var('xg_pm_selection_date')}}")
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
@@ -41,7 +41,7 @@ FROM
             ) }}
         WHERE
             SRC_DL = '{{var("xg_pm_src_dl")}}'
-            AND DATA_DT = PARSE_TIMESTAMP('%Y%m%d', "{{var('xg_pm_selection_date')}}")
+            AND DATA_DT = PARSE_DATETIME('%Y%m%d', "{{var('xg_pm_selection_date')}}")
     )
 )
 

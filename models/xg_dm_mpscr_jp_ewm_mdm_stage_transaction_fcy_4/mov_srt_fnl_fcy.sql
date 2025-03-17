@@ -15,10 +15,10 @@ FROM
             MOV_FNL_AR_SRC.AR_ID AS AR_ID,
             MOV_FNL_AR_SRC.VLD_FROM_TMS AS VLD_FROM_TMS,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                AR_ID ASC,
-                FCY_RK ASC,
-                VLD_FROM_TMS ASC
+                PARTITION BY SRC_DL,
+                AR_ID,
+                FCY_RK,
+                VLD_FROM_TMS
                 ORDER BY
                     SRC_DL ASC,
                     AR_ID ASC,

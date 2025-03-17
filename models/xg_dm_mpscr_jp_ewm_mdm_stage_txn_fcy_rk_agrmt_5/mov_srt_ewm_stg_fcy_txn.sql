@@ -5,7 +5,10 @@
 
 WITH mov_srt_ewm_stg_fcy_txn AS (
 SELECT
-    *
+   SUBJ_AR_ID,
+FCY_RK,
+DATA_DT,
+SRC_DL
 FROM
     (
         SELECT
@@ -14,8 +17,8 @@ FROM
             REA_EWM_STG_TXN_FCY.DATA_DT AS DATA_DT,
             REA_EWM_STG_TXN_FCY.SRC_DL AS SRC_DL,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                SUBJ_AR_ID ASC
+                PARTITION BY SRC_DL,
+                SUBJ_AR_ID
                 ORDER BY
                     SRC_DL ASC,
                     SUBJ_AR_ID ASC

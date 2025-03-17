@@ -16,7 +16,7 @@ FROM
     ) }}
 WHERE
     SRC_DL = '{{var("xg_pm_src_dl")}}'
-    AND DATA_DT = PARSE_TIMESTAMP('%Y%m%d', "{{var('xg_pm_selection_date')}}")
+    AND DATA_DT = PARSE_DATETIME('%Y%m%d', "{{var('xg_pm_selection_date')}}")
 )
 
 SELECT * FROM ora_read_ewm_mdm_stage_ar_txn

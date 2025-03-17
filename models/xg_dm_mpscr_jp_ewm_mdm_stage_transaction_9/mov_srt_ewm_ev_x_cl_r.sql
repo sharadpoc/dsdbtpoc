@@ -13,8 +13,8 @@ FROM
             REA_EWM_EV_X_CL_R.EV_ID AS EV_ID,
             REA_EWM_EV_X_CL_R.CL_CD AS CL_CD,
             ROW_NUMBER() OVER(
-                PARTITION BY EV_ID ASC,
-                SRC_DL ASC
+                PARTITION BY EV_ID,
+                SRC_DL
                 ORDER BY
                     EV_ID ASC,
                     SRC_DL ASC

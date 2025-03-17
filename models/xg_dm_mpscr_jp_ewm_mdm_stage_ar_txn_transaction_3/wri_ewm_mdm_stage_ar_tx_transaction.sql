@@ -1,6 +1,6 @@
 
 {{config(
-  materialized='ephemeral'
+  materialized='table'
 )}}
 
 WITH wri_ewm_mdm_stage_ar_tx_transaction AS (

@@ -1,6 +1,7 @@
 
 {{config(
   materialized='ephemeral'
+  
 )}}
 
 WITH jni_txn_fcy_rk_direct AS (

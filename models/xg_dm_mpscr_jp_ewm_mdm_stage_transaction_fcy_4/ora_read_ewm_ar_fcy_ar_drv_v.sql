@@ -9,7 +9,7 @@ SELECT
     SRC_DL,
     AR_ID,
     VLD_FROM_TMS,
-    PARSE_TIMESTAMP('%Y%m%d', "{{var('xg_pm_selection_date')}}") AS DATA_DT
+    PARSE_DATETIME('%Y%m%d', "{{var('xg_pm_selection_date')}}") AS DATA_DT
 FROM
     {{ source('DM_MPSCR', 'EWM_AR_FCY_AR_DRV_V') }}
 WHERE

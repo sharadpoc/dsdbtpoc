@@ -1,11 +1,26 @@
 
 {{config(
-  materialized='ephemeral'
+  materialized='table'
 )}}
 
 WITH wri_ar_mdm_stage_ar_fcy_m1 AS (
 SELECT
-    *
+   SRC_DL,
+EV_ID,
+MSTR_SRC_STM_CD,
+MSTR_SRC_STM_KEY,
+VLD_FROM_TMS,
+VLD_TO_TMS,
+PRIM_AR_ID,
+TXN_BOOK_DT,
+TXN_CCY_AMT,
+TXN_CCY_CL_CD,
+TXN_RSN_TP_CL_CD,
+LDGR_CCY_AMT,
+LDGR_CCY_CL_CD,
+FCY_RK,
+SYS_INRT_TMS,
+DATA_DT
 FROM
     (
         SELECT

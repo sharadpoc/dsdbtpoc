@@ -23,8 +23,8 @@ FROM
             REA_EWM_EV_TXN_V.LDGR_CCY_AMT AS LDGR_CCY_AMT,
             REA_EWM_EV_TXN_V.LDGR_CCY_CL_CD AS LDGR_CCY_CL_CD,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                PRIM_AR_ID ASC
+                PARTITION BY SRC_DL,
+                PRIM_AR_ID
                 ORDER BY
                     SRC_DL ASC,
                     PRIM_AR_ID ASC

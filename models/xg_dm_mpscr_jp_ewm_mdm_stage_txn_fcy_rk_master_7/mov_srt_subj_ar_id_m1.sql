@@ -24,8 +24,8 @@ FROM
             MOV_JNI_TX_AR_MSTR.LDGR_CCY_AMT AS LDGR_CCY_AMT,
             MOV_JNI_TX_AR_MSTR.LDGR_CCY_CL_CD AS LDGR_CCY_CL_CD,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                SUBJ_AR_ID ASC
+                PARTITION BY SRC_DL,
+                SUBJ_AR_ID
                 ORDER BY
                     SRC_DL ASC,
                     SUBJ_AR_ID ASC

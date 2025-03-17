@@ -5,7 +5,21 @@
 
 WITH mov_srt_subj_ar_id AS (
 SELECT
-    *
+   OBJ_AR_ID,
+SRC_DL,
+SUBJ_AR_ID,
+EV_ID,
+MSTR_SRC_STM_CD,
+MSTR_SRC_STM_KEY,
+VLD_FROM_TMS,
+VLD_TO_TMS,
+PRIM_AR_ID,
+TXN_BOOK_DT,
+TXN_CCY_AMT,
+TXN_CCY_CL_CD,
+TXN_RSN_TP_CL_CD,
+LDGR_CCY_AMT,
+LDGR_CCY_CL_CD
 FROM
     (
         SELECT
@@ -25,8 +39,8 @@ FROM
             MOV_JNI_MSTR_TXN_AGR_AR.LDGR_CCY_AMT AS LDGR_CCY_AMT,
             MOV_JNI_MSTR_TXN_AGR_AR.LDGR_CCY_CL_CD AS LDGR_CCY_CL_CD,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                SUBJ_AR_ID ASC
+                PARTITION BY SRC_DL,
+                SUBJ_AR_ID
                 ORDER BY
                     SRC_DL ASC,
                     SUBJ_AR_ID ASC

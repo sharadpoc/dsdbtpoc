@@ -14,8 +14,8 @@ FROM
             REA_EWM_STG_TXN_FCY.DATA_DT AS DATA_DT,
             REA_EWM_STG_TXN_FCY.SRC_DL AS SRC_DL,
             ROW_NUMBER() OVER(
-                PARTITION BY SRC_DL ASC,
-                PRIM_AR_ID ASC
+                PARTITION BY SRC_DL,
+                PRIM_AR_ID
                 ORDER BY
                     SRC_DL ASC,
                     PRIM_AR_ID ASC

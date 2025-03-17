@@ -13,11 +13,11 @@ FROM
 WHERE
     SRC_DL = '{{var("xg_pm_src_dl")}}'
     AND EV_X_CL_RLTNP_TP_CL_CD = 'SRC_FND_TP'
-    AND VLD_FROM_TMS <= PARSE_TIMESTAMP(
+    AND VLD_FROM_TMS <= PARSE_DATETIME(
         '%Y%m%d%H%M%S',
         "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
     )
-    AND PARSE_TIMESTAMP(
+    AND PARSE_DATETIME(
         '%Y%m%d%H%M%S',
         "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
     ) < VLD_TO_TMS

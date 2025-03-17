@@ -27,7 +27,7 @@ FROM
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
@@ -45,7 +45,7 @@ FROM
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
@@ -63,7 +63,7 @@ FROM
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
@@ -81,7 +81,7 @@ FROM
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
@@ -99,7 +99,7 @@ FROM
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
@@ -117,7 +117,7 @@ FROM
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
@@ -135,20 +135,20 @@ FROM
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS
         UNION DISTINCT
-        ALL
+        
         SELECT
             SRC_DL,
             AR_ID,
-            VLD_FROM_TMS
+            cast(VLD_FROM_TMS as TIMESTAMP) AS VLD_FROM_TMS
         FROM
             {{ source('DM_MPSCR', 'EWM_AR_RCVB_FNC_AR_V') }}
         WHERE
             SRC_DL = '{{var("xg_pm_src_dl")}}'
-            AND VLD_FROM_TMS <= PARSE_TIMESTAMP(
+            AND VLD_FROM_TMS <= PARSE_DATETIME(
                 '%Y%m%d%H%M%S',
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             )
-            AND PARSE_TIMESTAMP(
+            AND PARSE_DATETIME(
                 '%Y%m%d%H%M%S',
                 "{{var('xg_pm_selection_date')}}{{var('xg_pm_business_tms')}}"
             ) < VLD_TO_TMS

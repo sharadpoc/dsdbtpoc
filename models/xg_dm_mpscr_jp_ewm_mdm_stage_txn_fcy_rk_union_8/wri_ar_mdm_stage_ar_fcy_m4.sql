@@ -1,6 +1,6 @@
 
 {{config(
-  materialized='ephemeral'
+  materialized='table'
 )}}
 
 WITH wri_ar_mdm_stage_ar_fcy_m4 AS (

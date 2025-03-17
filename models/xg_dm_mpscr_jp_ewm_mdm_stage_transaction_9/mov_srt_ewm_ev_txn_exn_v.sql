@@ -16,8 +16,8 @@ FROM
             REA_EWM_EV_TXN_EXN_V.INT_TXN_CCY_AMT AS INT_TXN_CCY_AMT,
             REA_EWM_EV_TXN_EXN_V.PNP_TXN_CCY_AMT AS PNP_TXN_CCY_AMT,
             ROW_NUMBER() OVER(
-                PARTITION BY EV_ID ASC,
-                SRC_DL ASC
+                PARTITION BY EV_ID,
+                SRC_DL
                 ORDER BY
                     EV_ID ASC,
                     SRC_DL ASC
